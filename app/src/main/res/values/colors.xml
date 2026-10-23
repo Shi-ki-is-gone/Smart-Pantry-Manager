@@ -1,0 +1,15 @@
+<resources>
+    <color name="pantry_black">#000000</color>
+    <color name="pantry_surface">#121821</color>
+    <color name="pantry_blue_surface">#10243A</color>
+    <color name="pantry_border">#283648</color>
+    <color name="pantry_blue">#1976D2</color>
+    <color name="pantry_blue_dark">#0D47A1</color>
+    <color name="pantry_blue_light">#90CAF9</color>
+    <color name="pantry_white">#FFFFFF</color>
+    <color name="pantry_muted">#B0BEC5</color>
+    <color name="pantry_warning">#FFD54F</color>
+    <color name="pantry_rescue">#FF8A65</color>
+    <color name="pantry_ready">#81C784</color>
+    <color name="pantry_danger">#EF5350</color>
+</resources>

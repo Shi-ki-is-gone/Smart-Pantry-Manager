@@ -8,15 +8,15 @@
         <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
             android:orientation="vertical" android:padding="22dp" android:background="@drawable/surface_hero">
             <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                android:text="FROM YOUR PANTRY" android:textColor="#DCE6D8" android:textSize="11sp"
+                android:text="FROM YOUR PANTRY" android:textColor="@color/pantry_white" android:textSize="11sp"
                 android:textStyle="bold" android:letterSpacing="0.12"/>
             <TextView android:id="@+id/dTitle" android:layout_width="match_parent" android:layout_height="wrap_content"
-                android:layout_marginTop="10dp" android:textColor="#FFF9F1" android:textSize="29sp"
+                android:layout_marginTop="10dp" android:textColor="@color/pantry_white" android:textSize="29sp"
                 android:fontFamily="sans-serif-medium"/>
         </LinearLayout>
         <TextView android:id="@+id/dBody" android:layout_width="match_parent" android:layout_height="wrap_content"
             android:layout_marginTop="14dp" android:padding="18dp" android:background="@drawable/surface_card"
-            android:textColor="#49483F" android:textSize="15sp" android:lineSpacingExtra="5dp"/>
+            android:textColor="@color/pantry_white" android:textSize="15sp" android:lineSpacingExtra="5dp"/>
         <Button android:id="@+id/btnCook" android:layout_width="match_parent" android:layout_height="wrap_content"
             android:layout_marginTop="14dp" android:text="I made this · use these ingredients"/>
     </LinearLayout>

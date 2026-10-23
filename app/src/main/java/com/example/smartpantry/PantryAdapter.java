@@ -1,5 +1,4 @@
 package com.example.smartpantry;
-import android.graphics.Color;
 import android.view.*;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
@@ -25,13 +24,13 @@ public class PantryAdapter extends RecyclerView.Adapter<PantryAdapter.VH> {
         String q = (p.qty == Math.floor(p.qty)) ? "" + (long) p.qty : "" + p.qty;
         h.t.setText(p.name);
         String sub = q + " " + p.unit;
-        int color = Color.DKGRAY;
+        int color = h.itemView.getContext().getColor(R.color.pantry_muted);
         if (p.expiry != null && !p.expiry.isEmpty()) {
             sub += "  |  expires " + p.expiry;
             if (highlight) try {
                 Date d = new SimpleDateFormat("yyyy-MM-dd", Locale.US).parse(p.expiry);
                 long days = (d.getTime() - System.currentTimeMillis()) / 86400000L;
-                if (days <= 3) { color = Color.RED; sub += " (soon!)"; }
+                if (days <= 3) { color = h.itemView.getContext().getColor(R.color.pantry_danger); sub += " (soon!)"; }
             } catch (Exception ignored) {}
         }
         h.s.setText(sub); h.s.setTextColor(color);

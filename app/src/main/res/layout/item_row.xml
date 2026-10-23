@@ -5,7 +5,7 @@
     android:background="@drawable/surface_card" android:elevation="1dp"
     android:foreground="?android:attr/selectableItemBackground">
     <TextView android:id="@+id/title" android:layout_width="match_parent" android:layout_height="wrap_content"
-        android:textColor="#263D34" android:textSize="17sp" android:textStyle="bold"/>
+        android:textColor="@color/pantry_white" android:textSize="17sp" android:textStyle="bold"/>
     <TextView android:id="@+id/sub" android:layout_width="match_parent" android:layout_height="wrap_content"
-        android:layout_marginTop="4dp" android:textColor="#77756B" android:textSize="13sp"/>
+        android:layout_marginTop="4dp" android:textColor="@color/pantry_muted" android:textSize="13sp"/>
 </LinearLayout>

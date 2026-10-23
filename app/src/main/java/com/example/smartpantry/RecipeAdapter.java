@@ -8,9 +8,9 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.List;
 
 public class RecipeAdapter extends RecyclerView.Adapter<RecipeAdapter.VH> {
-    private static final int COLOR_MISSING = 0xFF9A6B00;
-    private static final int COLOR_RESCUE = 0xFFD35400;
-    private static final int COLOR_READY = 0xFF2E6B4F;
+    private static final int COLOR_MISSING = 0xFFFFD54F;
+    private static final int COLOR_RESCUE = 0xFFFF8A65;
+    private static final int COLOR_READY = 0xFF81C784;
 
     public interface Listener {
         void onClick(Recipe recipe);
