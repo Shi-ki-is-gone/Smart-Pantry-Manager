@@ -9,6 +9,7 @@ import java.util.List;
 public class MainActivity extends BaseActivity {
     private Db db; private RecyclerView rv; private TextView empty;
 
+    @SuppressWarnings("unused")
     @Override protected void onCreate(Bundle b) {
         super.onCreate(b);
         setContentView(R.layout.activity_list);
@@ -18,6 +19,7 @@ public class MainActivity extends BaseActivity {
         rv.setLayoutManager(new LinearLayoutManager(this));
         findViewById(R.id.btnAdd).setOnClickListener(v -> startActivity(new Intent(this, EditItemActivity.class)));
     }
+    @SuppressWarnings("unused")
     @Override protected void onResume() { super.onResume(); load(); }
 
     private void load() {
