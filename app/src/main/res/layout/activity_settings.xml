@@ -1,8 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent" android:layout_height="match_parent"
-    android:orientation="vertical" android:padding="16dp">
-    <androidx.appcompat.widget.SwitchCompat android:id="@+id/swAlerts"
-        android:layout_width="match_parent" android:layout_height="wrap_content"
-        android:text="Highlight items expiring within 3 days" android:padding="8dp"/>
+    android:orientation="vertical" android:paddingStart="20dp" android:paddingEnd="20dp"
+    android:paddingTop="22dp">
+    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+        android:text="MAKE IT YOURS" android:textColor="#A56845" android:textSize="11sp"
+        android:textStyle="bold" android:letterSpacing="0.12"/>
+    <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:layout_marginTop="4dp" android:layout_marginBottom="16dp"
+        android:text="Small nudges.\nLess food waste." android:textColor="#263D34"
+        android:textSize="28sp" android:fontFamily="sans-serif-medium" android:lineSpacingExtra="-2dp"/>
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:orientation="vertical" android:padding="18dp" android:background="@drawable/surface_card">
+        <androidx.appcompat.widget.SwitchCompat android:id="@+id/swAlerts"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="Expiry reminders" android:textColor="#263D34" android:textStyle="bold"
+            android:padding="8dp"/>
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:layout_marginStart="8dp" android:layout_marginEnd="8dp"
+            android:text="Highlight pantry items that expire within 3 days."
+            android:textColor="#77756B" android:textSize="13sp"/>
+    </LinearLayout>
+    <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:layout_marginTop="18dp" android:padding="18dp" android:background="@drawable/surface_accent"
+        android:text="LARDER RESCUE\nA little more cooking. A little less waste."
+        android:textColor="#694530" android:textSize="14sp" android:lineSpacingExtra="4dp"/>
 </LinearLayout>
