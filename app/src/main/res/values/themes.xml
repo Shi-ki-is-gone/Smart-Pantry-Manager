@@ -1,0 +1,9 @@
+<resources>
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">#2E6B4F</item>
+        <item name="colorPrimaryDark">#1F4A37</item>
+        <item name="colorAccent">#E07A2F</item>
+        <item name="android:windowBackground">#FBF7EF</item>
+        <item name="buttonStyle">@style/Widget.AppCompat.Button.Colored</item>
+    </style>
+</resources>

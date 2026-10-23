@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:orientation="vertical" android:padding="16dp">
+    <EditText android:id="@+id/etName" android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:hint="Ingredient name (e.g. tomatoes)" android:inputType="textCapWords"/>
+    <EditText android:id="@+id/etQty" android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:hint="Quantity" android:inputType="numberDecimal"/>
+    <Spinner android:id="@+id/spUnit" android:layout_width="match_parent" android:layout_height="48dp"/>
+    <EditText android:id="@+id/etExpiry" android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:hint="Expiry date yyyy-MM-dd (optional)" android:inputType="date"/>
+    <Button android:id="@+id/btnSave" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Save"/>
+    <Button android:id="@+id/btnDelete" android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:text="Delete" android:visibility="gone"/>
+</LinearLayout>

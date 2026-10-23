@@ -1,0 +1,5 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/nav_pantry" android:title="My Pantry"/>
+    <item android:id="@+id/nav_suggested" android:title="Suggested Recipes"/>
+    <item android:id="@+id/nav_settings" android:title="Settings"/>
+</menu>

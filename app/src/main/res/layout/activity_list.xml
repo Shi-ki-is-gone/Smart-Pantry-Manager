@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:orientation="vertical" android:padding="12dp">
+    <TextView android:id="@+id/stats" android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:padding="10dp" android:background="#FFE9D6" android:textColor="#9A4A10" android:textStyle="bold"/>
+    <Button android:id="@+id/btnAdd" android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:text="+ Add Ingredient"/>
+    <TextView android:id="@+id/empty" android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:padding="24dp" android:textSize="16sp" android:gravity="center" android:visibility="gone"/>
+    <androidx.recyclerview.widget.RecyclerView android:id="@+id/rv"
+        android:layout_width="match_parent" android:layout_height="match_parent"/>
+</LinearLayout>
