@@ -1,35 +1,92 @@
 package com.example.smartpantry;
-import android.view.*;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 import java.util.List;
 
 public class RecipeAdapter extends RecyclerView.Adapter<RecipeAdapter.VH> {
-    public interface Listener { void onClick(Recipe r); }
-    private final List<Matcher.Match> items; private final boolean almost; private final Listener l;
-    public RecipeAdapter(List<Matcher.Match> items, boolean almost, Listener l) { this.items = items; this.almost = almost; this.l = l; }
+    private static final int COLOR_MISSING = 0xFF9A6B00;
+    private static final int COLOR_RESCUE = 0xFFD35400;
+    private static final int COLOR_READY = 0xFF2E6B4F;
+
+    public interface Listener {
+        void onClick(Recipe recipe);
+    }
+
+    private final List<Matcher.Match> matches;
+    private final boolean showMissingIngredient;
+    private final Listener listener;
+
+    public RecipeAdapter(List<Matcher.Match> matches, boolean showMissingIngredient, Listener listener) {
+        this.matches = matches;
+        this.showMissingIngredient = showMissingIngredient;
+        this.listener = listener;
+    }
 
     static class VH extends RecyclerView.ViewHolder {
-        TextView t, s;
-        VH(View v) { super(v); t = v.findViewById(R.id.title); s = v.findViewById(R.id.sub); }
-    }
-    @NonNull @Override public VH onCreateViewHolder(@NonNull ViewGroup p, int type) {
-        return new VH(LayoutInflater.from(p.getContext()).inflate(R.layout.item_row, p, false));
-    }
-    @Override public void onBindViewHolder(@NonNull VH h, int pos) {
-        Matcher.Match m = items.get(pos);
-        h.t.setText(m.recipe.name);
-        if (almost) {
-            Recipe.Ing i = m.missing.get(0);
-            h.s.setText("Missing: " + (i.qty == Math.floor(i.qty) ? "" + (long) i.qty : "" + i.qty) + " " + i.unit + " " + i.name);
-            h.s.setTextColor(0xFF9A6B00);
-        } else {
-            h.s.setText(m.rescue > 0 ? "♻ Rescues " + m.rescue + " expiring ingredient" + (m.rescue > 1 ? "s" : "") + "!"
-                                     : m.recipe.ings.size() + " ingredients - ready to cook");
-            h.s.setTextColor(m.rescue > 0 ? 0xFFD35400 : 0xFF2E6B4F);
+        final TextView title;
+        final TextView subtitle;
+
+        VH(View itemView) {
+            super(itemView);
+            title = itemView.findViewById(R.id.title);
+            subtitle = itemView.findViewById(R.id.sub);
         }
-        h.itemView.setOnClickListener(v -> l.onClick(m.recipe));
     }
-    @Override public int getItemCount() { return items.size(); }
+
+    @NonNull
+    @Override
+    public VH onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View itemView = LayoutInflater.from(parent.getContext())
+                .inflate(R.layout.item_row, parent, false);
+        return new VH(itemView);
+    }
+
+    @Override
+    public void onBindViewHolder(@NonNull VH holder, int position) {
+        Matcher.Match match = matches.get(position);
+        holder.title.setText(match.recipe.name);
+
+        if (showMissingIngredient) {
+            bindMissingIngredient(holder, match.missing.get(0));
+        } else {
+            bindReadyRecipe(holder, match);
+        }
+
+        holder.itemView.setOnClickListener(view -> listener.onClick(match.recipe));
+    }
+
+    private void bindMissingIngredient(VH holder, Recipe.Ing ingredient) {
+        holder.subtitle.setText("Missing: " + formatQuantity(ingredient.qty)
+                + " " + ingredient.unit + " " + ingredient.name);
+        holder.subtitle.setTextColor(COLOR_MISSING);
+    }
+
+    private void bindReadyRecipe(VH holder, Matcher.Match match) {
+        if (match.rescue > 0) {
+            String ingredientLabel = match.rescue == 1 ? "ingredient" : "ingredients";
+            holder.subtitle.setText("♻ Rescues " + match.rescue + " expiring "
+                    + ingredientLabel + "!");
+            holder.subtitle.setTextColor(COLOR_RESCUE);
+            return;
+        }
+
+        holder.subtitle.setText(match.recipe.ings.size() + " ingredients - ready to cook");
+        holder.subtitle.setTextColor(COLOR_READY);
+    }
+
+    private String formatQuantity(double quantity) {
+        if (quantity == Math.floor(quantity)) {
+            return String.valueOf((long) quantity);
+        }
+        return String.valueOf(quantity);
+    }
+
+    @Override
+    public int getItemCount() {
+        return matches.size();
+    }
 }
