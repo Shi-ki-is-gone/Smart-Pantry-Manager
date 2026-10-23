@@ -26,7 +26,7 @@ public class MainActivity extends BaseActivity {
         List<PantryItem> items = db.pantry();
         android.content.SharedPreferences sp = getSharedPreferences("prefs", MODE_PRIVATE);
         ((TextView) findViewById(R.id.stats)).setText("\uD83C\uDF7D Meals cooked: " + sp.getInt("cooked", 0)
-            + "   \u267B Items rescued from expiry: " + sp.getInt("rescued", 0));
+            + "   ♻ Items rescued from expiry: " + sp.getInt("rescued", 0));
         empty.setText("Your pantry is empty - add some ingredients.");
         empty.setVisibility(items.isEmpty() ? android.view.View.VISIBLE : android.view.View.GONE);
         boolean hl = getSharedPreferences("prefs", MODE_PRIVATE).getBoolean("alerts", true);
