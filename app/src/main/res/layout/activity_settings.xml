@@ -23,6 +23,6 @@
     </LinearLayout>
     <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
         android:layout_marginTop="18dp" android:padding="18dp" android:background="@drawable/surface_accent"
-        android:text="LARDER RESCUE\nA little more cooking. A little less waste."
+        android:text="SMART PANTRY MANAGER\nA little more cooking. A little less waste."
         android:textColor="@color/pantry_white" android:textSize="14sp" android:lineSpacingExtra="4dp"/>
 </LinearLayout>

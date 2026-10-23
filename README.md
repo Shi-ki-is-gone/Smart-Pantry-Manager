@@ -1,6 +1,6 @@
-# Larder Rescue
+# Smart Pantry Manager
 
-Larder Rescue is an Android app for keeping track of pantry ingredients, quantities, and expiry dates. It suggests recipes based on what is available, highlights ingredients that are close to expiring, and updates pantry quantities when you cook a recipe.
+Smart Pantry Manager is an Android app for keeping track of pantry ingredients, quantities, and expiry dates. It suggests recipes based on what is available, highlights ingredients that are close to expiring, and updates pantry quantities when you cook a recipe.
 
 ## Database
 
@@ -15,7 +15,7 @@ The app uses **SQLite**, Android's built-in relational database, through `SQLite
 ## Setup and run
 
 1. Clone or download this repository.
-2. In Android Studio, choose **Open** and select the project root directory containing `settings.gradle` (the `SmartPantry` folder).
+2. In Android Studio, choose **Open** and select the project root directory containing `settings.gradle`.
 3. Allow Gradle sync to complete. If prompted, install Android SDK Platform 34 using **Tools > SDK Manager**.
 4. Create or select an emulator in **Tools > Device Manager**, or connect an Android device with USB debugging enabled.
 5. Select the `app` run configuration and your device, then click **Run**. Android Studio will build and install the app.

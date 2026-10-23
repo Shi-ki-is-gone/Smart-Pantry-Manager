@@ -4,7 +4,7 @@
     android:orientation="vertical" android:paddingStart="18dp" android:paddingEnd="18dp"
     android:paddingTop="16dp" android:paddingBottom="8dp">
     <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-        android:text="LARDER RESCUE   /   YOUR KITCHEN" android:textColor="@color/pantry_blue_light"
+        android:text="SMART PANTRY MANAGER   /   YOUR KITCHEN" android:textColor="@color/pantry_blue_light"
         android:textSize="11sp" android:textStyle="bold" android:letterSpacing="0.12"/>
     <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
         android:layout_marginTop="4dp" android:text="Good food,\nright at home." android:textColor="@color/pantry_blue"
