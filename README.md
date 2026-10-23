@@ -1,7 +1,7 @@
 # Smart Pantry Manager
 
 Smart Pantry Manager is an Android app for keeping track of pantry ingredients, quantities, and expiry dates. It suggests recipes based on what is available, highlights ingredients that are close to expiring, and updates pantry quantities when you cook a recipe.
-
+Written Report can be found in a separate branch
 ## Database
 
 The app uses **SQLite**, Android's built-in relational database, through `SQLiteOpenHelper`. Pantry items, recipes, and recipe ingredients are stored on the device, so the app works offline without a server or separate database installation. SQLite transactions keep pantry updates consistent when ingredients are used, and indexes help with common name and expiry lookups.
